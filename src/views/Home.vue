@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1>This is the home page</h1>
     <button @click="toggleModal">Open</button>
     <transition name="fade">
       <div v-if="isOpen" class="modal">

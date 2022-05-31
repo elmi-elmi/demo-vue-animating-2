@@ -1,5 +1,40 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <input type="text" v-model="newContact" placeholder="Name"/>
+    <button @click="addContact">Add</button>
+    <button @click="sort">Sort</button>
+
+    <transition-group tag="ul" name="slide-up" appear>
+      <li v-for="contact in contacts" :key="contact">
+        {{ contact }}
+      </li>
+    </transition-group>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      newContact: '',
+      contacts: ['Beau Thabeast', 'Cindy Rella', 'Alice Vunderlind']
+    }
+  },
+  methods: {
+    addContact() {
+      this.contacts.push(this.newContact)
+      this.newContact = ''
+    },
+    sort(){
+      this.contacts.sort();
+    }
+  }
+}
+</script>
+
+<style>
+ul{
+  list-style: none;
+}
+</style>
+

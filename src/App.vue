@@ -5,7 +5,7 @@
       |
       <router-link to="/about">About</router-link>
     </div>
-    <transition name="fade" mode="out-in">
+    <transition name="slide-fade" mode="out-in" appear>
       <router-view/>
     </transition>
   </div>
@@ -70,4 +70,35 @@ button {
 .fade-leave-to {
   opacity: 0;
 }
+
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.slide-up-enter-active{
+  transition:all 0.2s ease;
+}
+
+.slide-up-move{
+  transition:transform 0.8s  ease-in-out;
+}
+
+
+
 </style>
