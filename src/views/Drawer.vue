@@ -3,22 +3,51 @@
     <button @click="isOpen = !isOpen">
       My Profile
     </button>
-    <div v-if="isOpen" class="drawer">
-      <img src="../assets/avatar.png" alt="avatar"/>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <transition
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave"
+    >
+      <div v-if="isOpen" class="drawer">
+        <img src="../assets/avatar.png" alt="avatar"/>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import Velocity from 'velocity-animate'
+
 export default {
   name: 'Drawer',
   data() {
     return {
       isOpen: false
+    }
+  },
+  methods: {
+    beforeEnter(el) {
+      el.style.opacity = 0;
+      el.style.width = '0rem';
+    },
+    enter(el, done) {
+      Velocity(
+        el,
+        { opacity: 1, width: '12rem' },
+        { duration: 700, easing: [150, 15], complete: done }
+        // {duration: 700, easing: 'easeOutCubiv', complete: done}
+      )
+    },
+    leave(el, done) {
+      Velocity(
+        el,
+        { opacity: 0, width: '0rem' },
+        { duration: 400, easing: 'easeInCubiv', complete: done }
+      )
     }
   }
 }
