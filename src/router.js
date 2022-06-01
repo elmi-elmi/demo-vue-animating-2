@@ -33,6 +33,11 @@ export default new Router({
       path: '/stagger',
       name: 'stagger',
       component: () => import(/* webpackChunkName: "list" */ './views/Stagger')
+    },
+    {
+      path: '/state',
+      name: 'state',
+      component: () => import(/* webpackChunkName: "list" */ './views/State')
     }
   ]
 })

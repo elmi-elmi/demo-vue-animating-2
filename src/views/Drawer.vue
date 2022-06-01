@@ -16,6 +16,7 @@
         <div></div>
       </div>
     </transition>
+    <p>__velocity library__</p>
   </div>
 </template>
 

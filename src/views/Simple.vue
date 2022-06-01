@@ -1,7 +1,10 @@
 <template>
+  <div>
   <transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
     <div class="card"></div>
   </transition>
+  <p>__gspa library__</p>
+  </div>
 </template>
 
 <script>
