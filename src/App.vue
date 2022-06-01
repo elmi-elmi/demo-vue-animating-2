@@ -3,11 +3,13 @@
     <div id="nav">
       <router-link to="/">Modal</router-link> |
       <router-link to="/list">List</router-link> |
-      <router-link to="/drawer">Drawer</router-link>
+      <router-link to="/drawer">Drawer</router-link> |
+      <router-link to="/simple">Simple</router-link> |
+      <router-link to="/stagger">Stagger</router-link>
     </div>
-    <transition name="slide-fade" mode="out-in">
+<!--    <transition name="slide-fade" mode="out-in">-->
       <router-view />
-    </transition>
+<!--    </transition>-->
   </div>
 </template>
 
@@ -112,6 +114,6 @@ ul {
 }
 
 .slide-up-move {
-  transition: transform 0.8s ease-in;
+  transition: transform 0.5s ease-in;
 }
 </style>

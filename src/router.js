@@ -22,7 +22,17 @@ export default new Router({
       path: '/drawer',
       name: 'drawer',
       component: () =>
-          import(/* webpackChunkName: "list" */ './views/Drawer.vue')
+        import(/* webpackChunkName: "list" */ './views/Drawer.vue')
+    },
+    {
+      path: '/simple',
+      name: 'simple',
+      component: () => import(/* webpackChunkName: "list" */ './views/Simple')
+    },
+    {
+      path: '/stagger',
+      name: 'stagger',
+      component: () => import(/* webpackChunkName: "list" */ './views/Stagger')
     }
   ]
 })

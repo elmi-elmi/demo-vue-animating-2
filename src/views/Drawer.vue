@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     beforeEnter(el) {
+      console.log('drawe')
       el.style.opacity = 0;
       el.style.width = '0rem';
     },
