@@ -38,6 +38,11 @@ export default new Router({
       path: '/state',
       name: 'state',
       component: () => import(/* webpackChunkName: "list" */ './views/State')
+    },
+    {
+      path: '/timeline',
+      name: 'state',
+      component: () => import(/* webpackChunkName: "list" */ './views/Timeline')
     }
   ]
 })
